@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.slider-container {
+    width: 375px;
+    height: 812px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #1a1a2e;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.1s linear;
+}
+
+.parallax-layer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    pointer-events: none;
+}
+
+.middle-layer img {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+}
+
+.back-layer img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.front-layer {
+    background-image: url('/img/foreground_01.png');
+    background-repeat: repeat;
+    background-size: auto 100%;
+    background-position: left center;
+}
+
+/* Бесшовные слои */
+.back-layer {
+    width: 200%;
+    left: -85%;
+}
+
+.front-layer {
+    width: 800%;
+    left: 0;
+}
+
+.back-layer {
+    z-index: 1;
+}
+
+.middle-layer {
+    z-index: 2;
+}
+
+.front-layer {
+    z-index: 3;
+}
+
+.nav-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: white;
+    width: 30px;
+    border-radius: 5px;
+}
