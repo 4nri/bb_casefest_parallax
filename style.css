@@ -61,6 +61,7 @@ body {
 .back-layer img {
     object-fit: cover;
     object-position: center;
+    transform: translate(0%, 10px);
 }
 
 .front-layer {
@@ -73,7 +74,7 @@ body {
 /* Бесшовные слои */
 .back-layer {
     width: 200%;
-    left: -85%;
+    left: -70%;
 }
 
 .front-layer {
